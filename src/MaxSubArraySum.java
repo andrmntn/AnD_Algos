@@ -1,14 +1,10 @@
 public class MaxSubArraySum {
     int[] input;
-    int start;
-    int end;
 
 
-    public MaxSubArraySum(int[] input, int start, int end){
+    public MaxSubArraySum(int[] input){
 
         this.input = input;
-        this.start = start;
-        this.end = end;
 
     }
 
@@ -25,14 +21,12 @@ public class MaxSubArraySum {
         int lowerhalf = solveMaxSubArraySum(input, start, mid);
         int upperhalf = solveMaxSubArraySum(input, mid + 1, end);
         int middlehalf = solveMaxCrossingSubArraySum(input, start, mid, end);
-		/*
-		System.out.println(lowerhalf);
-		System.out.println(middlehalf);
-		System.out.println(upperhalf);
 
-		System.out.println("Späss mal " + Math.max(lowerhalf, Math.max(middlehalf, upperhalf)));
-		System.out.println("gehe raus aus - start: " + start + ", end: " + end);*/
+        //System.out.println(lowerhalf);
+        //System.out.println(middlehalf);
+        //System.out.println(upperhalf);
 
+        //System.out.println("Spääse: "+ Math.max(lowerhalf, Math.max(middlehalf, upperhalf)));
         return Math.max(lowerhalf, Math.max(middlehalf, upperhalf));
 
 
