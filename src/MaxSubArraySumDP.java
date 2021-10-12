@@ -1,34 +1,38 @@
 public class MaxSubArraySumDP {
 
-    int maxEnding = Integer.MIN_VALUE;
-    int[] input;
+    double maxEnding = (double) Integer.MIN_VALUE;
+    double[] input;
     //int endindex;
 
 
 
-    public MaxSubArraySumDP(int[] input){
+    public MaxSubArraySumDP(double[] input){
         this.input = input;
         //this.endindex = endindex;
     }
 
-    public int solveMaxSubArraySumDP() {
-        compute(input.length-1);
+    public double solveMaxSubArraySumDP() {
+        double res = compute(input.length-1);
+
+        if (maxEnding < res) maxEnding = res;
+
         return maxEnding;
     }
 
-    public int compute(int endindex) {
+    public double compute(int endindex) {
 
         if (endindex == 0){
             return input[0];
         }
 
-        int prevresult = compute(endindex-1);
-        if( prevresult >= 0){
+        double prevresult = compute(endindex-1);
+        if( prevresult >= 1){
             
-            if (maxEnding < prevresult+input[endindex]) maxEnding = prevresult+input[endindex];
+            if (maxEnding < prevresult*input[endindex]) maxEnding = prevresult*input[endindex];
 
-            return prevresult+input[endindex];
+            return prevresult*input[endindex];
         }
+
         return input[endindex];
     }
 }
