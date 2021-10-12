@@ -23,7 +23,8 @@ public class LongestPosSubsequence {
             array[i] = scanner.nextInt();
 
         System.out.println(longest_positive_subarray(array));
-
+        
+        scanner.close();
 
         // Uncomment this line if you want to read from a file
         // In.close();
