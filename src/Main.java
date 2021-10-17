@@ -2,7 +2,7 @@ public class Main {
 
 
         public static void main(String[] args) {
-            double[] input = new double[] { 7, 11, 18, 10, 23, 3, 27, 1};
+            double[] input = new double[] { 1, 0.1, 0.5, 5};
 
             //MaxSubArraySum msas = new MaxSubArraySum(input);
             MaxSubArraySumDP msasdp = new MaxSubArraySumDP(input);
